@@ -1,5 +1,6 @@
 name: Test
 
+# Some comment here
 on:
   push:
     branches-ignore:
