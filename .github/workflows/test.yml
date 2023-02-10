@@ -7,6 +7,10 @@ on:
       - gh-readonly-queue/main/*
   merge_group:
 
+concurrency:
+  group: foobar
+  cancel-in-progress: true
+
 jobs:
   test:
     name: Test
