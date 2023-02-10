@@ -12,7 +12,13 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Failure
+        if: github.event_name == 'merge_group'
+        run: |
+          exit 1
+
       - name: Success
+        if: github.event_name != 'merge_group'
         run: |
           exit 0
 
