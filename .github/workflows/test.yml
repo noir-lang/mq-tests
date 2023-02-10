@@ -2,6 +2,8 @@ name: Test
 
 on:
   push:
+    branches-ignore:
+      - gh-readonly-queue/main/*
 
 jobs:
   test:
