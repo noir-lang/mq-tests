@@ -14,3 +14,11 @@ jobs:
       - name: Success
         run: |
           exit 0
+
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success
+        run: |
+          exit 0
