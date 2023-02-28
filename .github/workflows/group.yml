@@ -1,0 +1,13 @@
+name: Merge group
+
+on:
+  merge_group:
+
+jobs:
+  mg-only:
+    name: Merge group only
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failure
+        run: |
+          exit 1
