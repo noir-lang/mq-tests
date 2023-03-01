@@ -1,62 +1,92 @@
 name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+description: File a bug report to help us improve.
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        ## Description
+        Thanks for taking the time to fill out this bug report to help us improve Noir!
+  - type: textarea
+    id: aim
+    attributes:
+      label: Aim
+      description: Describe what you tried to achieve.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: bug
+    attributes:
+      label: Bug
+      description: Describe the bug. Supplement error codes / terminal logs if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: To reproduce
+      description: Describe the steps to reproduce the behavior.
+      value: |
+        1.
+        2.
+        3.
+        4.
+        ...
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+        Specify your versions of Noir releases used.
+  - type: markdown
+    attributes:
+      value: |
+        ### Using Nargo?
+  - type: dropdown
+    id: nargo-install
+    attributes:
+      label: Installation method
+      description: How did you install Nargo?
+      multiple: false
+      options:
+        - Binary
+        - Compiled from source
   - type: input
-    id: contact
+    id: nargo-version
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+      label: Nargo version
+      description: What is the output of the `nargo --version` command?
+      placeholder: "nargo 0.2.0 (git version hash: e927a39dc3d6517f233509b8349dfd9c7f79471d, is dirty: false)"
+  - type: markdown
+    attributes:
+      value: |
+        ### Using TypeScript?
+  - type: input
+    id: noir_wasm-version
+    attributes:
+      label: "@noir-lang/noir_wasm version"
+      description: What is the version number? e.g. version in yarn.lock
+      placeholder: "0.2.0-ca986a4"
+  - type: input
+    id: barretenberg-version
+    attributes:
+      label: "@noir-lang/barretenberg version"
+      description: What is the version number? e.g. version in yarn.lock
+      placeholder: "2.19.0"
+  - type: input
+    id: aztec_backend-version
+    attributes:
+      label: "@noir-lang/aztec_backend version"
+      description: What is the version number? e.g. version in yarn.lock
+      placeholder: "0.12.0"
   - type: textarea
-    id: what-happened
+    id: additional
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: bash
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Additional context
+      description: Please provide any additional context that may be applicable.
